@@ -1,14 +1,22 @@
 ﻿#include <iostream>
 
 using namespace std;
-double my_pow(double a, unsigned int b) {
+double my_pow(double a, int b) {
     long double x = a;
-    for (int i = 0; i < b; i++) {
-        x = x * a;
+    if (a >= 0) {
+        for (int i = 0; i < b; i++) {
+            x = x * a;
+        }
+        return x;
     }
-    return x;
+    else {
+        for (int i = 0; i < b; i++) {
+            x = x * a;
+        }
+        return -x;
+    }
 }
 int main()
 {
-    cout << my_pow(2, 8);
+    cout << my_pow(-2, 5);
 }
